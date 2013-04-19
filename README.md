@@ -6,3 +6,4 @@ permalink these highlights using HTML anchor.
 
 See top of efatmarker.js (efatmarker.min.js) for instructions on how to add
 an EFatMarker to your HTML pages.
+
