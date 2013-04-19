@@ -17,8 +17,8 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 **/
 
 .efm-hi {
-    background-color:#ff8;
-    font-weight:normal;
+    background-color: #ff8;
+    font-weight: normal;
     }
 
 /******************************************************************************/
@@ -41,45 +41,45 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
     opacity:1;
     }
 #efm-button #efm-menu {
-    margin:0 0 52px 0;
-    border:1px outset gray;
-    padding:0;
-    display:none;
-    background:#eee;
-    position:fixed;
-    bottom:0;
-    right:0;
-    width:20em;
-    opacity:1;
+    margin: 0 0 52px 0;
+    border: 1px outset gray;
+    padding: 0;
+    display: none;
+    background: #eee;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 20em;
+    opacity: 1;
     cursor: auto;
     }
 #efm-button:hover #efm-menu {
-    display:block;
-    font-size:smaller;
-    color:#999;
+    display: block;
+    font-size: smaller;
+    color: #999;
     }
 #efm-button #efm-menu p {
-    margin:0;
-    padding:0 3px;
+    margin: 0;
+    padding: 0 3px;
     }
 #efm-button #efm-menu a {
-    margin:1px;
-    padding:3px 3px;
-    display:block;
+    margin: 1px;
+    padding: 3px 3px;
+    display: block;
     font:12px sans-serif;
-    white-space:nowrap;
-    opacity:inherit;
-    cursor:pointer;
+    white-space: nowrap;
+    opacity: inherit;
+    cursor: pointer;
     }
 #efm-button #efm-menu a:hover {
-    color:black;
-    background-color:
-    white;opacity:1;
+    color: black;
+    background-color: white;
+    opacity: 1;
     }
 #efm-button #efm-menu a > span {
-    color:gray;
-    position:absolute;
-    right:4px;
+    color: gray;
+    position: absolute;
+    right: 4px;
     }
 #efm-button #efm-menu #efm-twitter-button {
     padding-left: 64px;
