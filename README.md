@@ -29,9 +29,10 @@ Compatibility
 =============
 
 So far, tested on
-    * LinuxMint 14 (25.0.1364.160-0ubuntu0.12.10.1)
-        * Chromium 25.0.1364.160
-        * Firefox 20.0
+
+* LinuxMint 14 (25.0.1364.160-0ubuntu0.12.10.1):
+* Chromium 25.0.1364.160
+* Firefox 20.0
 
 Usage
 =====
