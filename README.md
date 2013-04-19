@@ -25,9 +25,9 @@ Compatibility
 =============
 
 So far, tested on
-    LinuxMint 14 (25.0.1364.160-0ubuntu0.12.10.1)
-        Chromium 25.0.1364.160
-        Firefox 20.0
+    * LinuxMint 14 (25.0.1364.160-0ubuntu0.12.10.1)
+        * Chromium 25.0.1364.160
+        * Firefox 20.0
 
 Usage
 =====
@@ -63,9 +63,7 @@ I used a snapshot of a Wikipedia article, embedded EFatMarker's ```js``` and
 here are examples of permalinked highlights:
 
 * http://www.raymondhill.net/efatmarker/Universe-Wikipedia.html#efmKGTKJJ
-
 * http://www.raymondhill.net/efatmarker/Universe-Wikipedia.html#efmERZEVJ
-
 * http://www.raymondhill.net/efatmarker/Universe-Wikipedia.html#efmLvsLv1LwWLweLx7LyBLzSLzYL0fL0mL1PL1aL2NL2V
 
 The content of the page itself doesn't change, the fragment identifier
