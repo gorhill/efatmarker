@@ -1,11 +1,15 @@
 EFatMarker
 ==========
 
-Allows to dynamically highlight specific portion(s) of a document,
-and to permalink these highlights using HTML anchor.
+This javascript library allows you to add a text highlighter to your web pages,
+which gives the users of your site the ability to share with others their own
+highlighted text passages on your web pages.
+
+Project
+=======
 
 Author: Raymond Hill
-Project home: github/gorhill/efatmarker
+Home: https://github.com/gorhill/efatmarker
 Version: 1.0
 
 License
