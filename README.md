@@ -55,3 +55,19 @@ There are no outside dependencies, however, if jQuery or mootools' FX is
 present, it will be used to scroll to the first highlight when the page
 loads the first time.
 
+Demo
+====
+
+I used a snapshot of a Wikipedia article, embedded EFatMarker's ```js``` and
+```css``` files to it, added the ```efm-target``` to the main article, and
+here are examples of permalinked highlights:
+
+* http://www.raymondhill.net/efatmarker/Universe-Wikipedia.html#efmKGTKJJ
+
+* http://www.raymondhill.net/efatmarker/Universe-Wikipedia.html#efmERZEVJ
+
+* http://www.raymondhill.net/efatmarker/Universe-Wikipedia.html#efmLvsLv1LwWLweLx7LyBLzSLzYL0fL0mL1PL1aL2NL2V
+
+The content of the page itself doesn't change, the fragment identifier
+(http://www.w3.org/TR/html4/intro/intro.html#fragment-uri) in the URL address
+specifies what portion of text must be highlighted.
