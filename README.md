@@ -32,7 +32,7 @@ So far, tested on
 Usage
 =====
 
-In the <head> section of your HTML file, include:
+In the ```<head>``` section of your HTML file, include:
     ```<link rel="stylesheet" type="text/css" href="efatmarker.css" />```
 
 To change the style of the highlighted text, edit the class ```.efm-hi```
