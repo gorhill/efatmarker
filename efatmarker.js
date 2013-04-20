@@ -663,7 +663,7 @@ var EFatMarker = function() {
               '<div id="efm-menu">'
             + '<h3 style="margin:0 0 2px 0">EFatMarker<\/h3>'
             + '<p class="efm-menu-separator efm-need-highlight"><\/p>'
-            + '<a id="efm-permalink" class="efm-need-highlight" href="#" style="margin-bottom:0;padding-bottom:0;" target="_blank"><\/a>'
+            + '<a id="efm-permalink" class="efm-need-highlight" href="#" target="_blank"><\/a>'
             + '<p class="efm-menu-separator efm-need-highlight"><\/p>'
             + '<a id="efm-twitter-button" class="efm-need-highlight" href="#" target="_blank">these highlights<\/a>'
             + '<p class="efm-menu-separator"><\/p>'
