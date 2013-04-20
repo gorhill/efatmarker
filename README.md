@@ -87,7 +87,7 @@ I used a snapshot of a Wikipedia article, embedded EFatMarker's ```js``` and
 here are examples of permalinked highlights:
 
 * http://www.raymondhill.net/efatmarker/foreign-signs.html#efmAW0AX2
-* http://www.raymondhill.net/efatmarker/foreign-signs.html#efmAxmAyr
+* http://www.raymondhill.net/efatmarker/foreign-signs.html#efmA8IA9h
 * http://www.raymondhill.net/efatmarker/foreign-signs-with-jquery.html#efmA2FA2LA6eA6jA71A77A_oA_uBDABDF
 
 The content of the page itself doesn't change, the fragment identifier
