@@ -58,7 +58,7 @@ SOFTWARE.
 /* EFatMarker menu => default state, hidden */
 #efm-button #efm-menu {
     margin: 0 0 52px 0;
-    border: 1px outset gray;
+    border: 1px outset #ccc;
     padding: 0;
     display: none;
     background: #eee;

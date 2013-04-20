@@ -698,13 +698,6 @@ var EFatMarker = function() {
                 event.preventDefault();
                 });
             }
-        elem = document.querySelector('#efm-permalink');
-        if (elem){
-            elem.addEventListener('mousedown', function(event){
-                window.location.href = this.href;
-                event.preventDefault();
-                });
-            }
         // TODO: Put back keybord support without having to depend on a
         // specific framework.
         // if Mootools Keyboard is available, use it
@@ -732,7 +725,7 @@ var EFatMarker = function() {
         // animation.
         if (eMarker.hasSpans()) {
             if (typeof jQuery === 'function') {
-                jQuery('body').animate({scrollTop: parseInt(jQuery('.efm-parent').offset().top, 10)});
+                jQuery('body,html').animate({scrollTop: parseInt(jQuery('.efm-parent').offset().top, 10)});
                 }
            else if (typeof Fx === 'function') {
                 var highlight = document.querySelector('.efm-parent');
