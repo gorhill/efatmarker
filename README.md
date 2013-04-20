@@ -74,9 +74,9 @@ I used a snapshot of a Wikipedia article, embedded EFatMarker's ```js``` and
 ```css``` files to it, added the ```efm-target``` to the main article, and
 here are examples of permalinked highlights:
 
-* http://www.raymondhill.net/efatmarker/Universe-Wikipedia.html#efmKGTKJJ
-* http://www.raymondhill.net/efatmarker/Universe-Wikipedia.html#efmERZEVJ
-* http://www.raymondhill.net/efatmarker/Universe-Wikipedia.html#efmLvsLv1LwWLweLx7LyBLzSLzYL0fL0mL1PL1aL2NL2V
+* http://www.raymondhill.net/efatmarker/foreign-signs.html#efmAcLAc0
+* http://www.raymondhill.net/efatmarker/foreign-signs.html#efmAxmAyr
+* http://www.raymondhill.net/efatmarker/foreign-signs.html#efmA2FA2LA6eA6jA71A77A_oA_uBDABDF
 
 The content of the page itself doesn't change, the fragment identifier
 (http://www.w3.org/TR/html4/intro/intro.html#fragment-uri) in the URL address
