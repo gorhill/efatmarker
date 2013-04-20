@@ -10,43 +10,63 @@ highlighted text passages on your web pages.
 Project
 =======
 
-Author: Raymond Hill
-Home: https://github.com/gorhill/efatmarker
-Version: 1.0
+* Author: Raymond Hill
+* Home: https://github.com/gorhill/efatmarker
+* Version: 1.0
 
 License
 =======
 
-http://opensource.org/licenses/MIT
-
 Copyright (C) 2012 Raymond Hill
 
-Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+Permission is hereby granted, free of charge, to any person obtaining a copy of
+this software and associated documentation files (the "Software"), to deal in
+the Software without restriction, including without limitation the rights to
+use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of
+the Software, and to permit persons to whom the Software is furnished to do so,
+subject to the following conditions:
 
-The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+http://opensource.org/licenses/MIT
+
+Credits
+=======
+
+EFatMarker icon:
+http://openiconlibrary.sourceforge.net/gallery2/?./Icons/apps/kedit-2.png
+
 
 Compatibility
 =============
 
 So far, tested on
-    * LinuxMint 14 (25.0.1364.160-0ubuntu0.12.10.1)
-        * Chromium 25.0.1364.160
-        * Firefox 20.0
+
+* LinuxMint 14 (25.0.1364.160-0ubuntu0.12.10.1):
+* Chromium 25.0.1364.160
+* Firefox 20.0
 
 Usage
 =====
 
 In the ```<head>``` section of your HTML file, include:
-    ```<link rel="stylesheet" type="text/css" href="efatmarker.css" />```
+ ```<link rel="stylesheet" type="text/css" href="efatmarker.css" />```
 
 To change the style of the highlighted text, edit the class ```.efm-hi```
 in the CSS file.
 
 Also, anywhere in your file, usuably preferably before the closing ```</body>```
 tag, include:
-    ```<script type="text/javascript" src="efatmarker.js"></script>```
+ ```<script type="text/javascript" src="efatmarker.js"></script>```
 
 You must identify the HTML container element in your document which
 contains the text which will inherit the ability to be dynamically
@@ -313,7 +333,7 @@ var EFatMarker = function() {
             iTextStart, iTextEnd;
         for (iRange=0; iRange<selection.rangeCount; iRange++) {
             range = selection.getRangeAt(iRange);
-            // convert to cableBody world
+            // convert to target container world
             iTextStart = this.normalizeOffset(range.startContainer, range.startOffset);
             iTextEnd   = this.normalizeOffset(range.endContainer, range.endOffset);
             if (iTextStart >= 0 && iTextStart < iTextEnd) {
@@ -334,7 +354,7 @@ var EFatMarker = function() {
             iTextStart, iTextEnd;
         for (iRange=0; iRange<selection.rangeCount; iRange++) {
             range = selection.getRangeAt(iRange);
-            // convert to cableBody world
+            // convert to target container world
             iTextStart = this.normalizeOffset(range.startContainer, range.startOffset);
             iTextEnd   = this.normalizeOffset(range.endContainer, range.endOffset);
             if (iTextStart >= 0 && iTextStart < iTextEnd) {
@@ -355,7 +375,7 @@ var EFatMarker = function() {
             iTextStart, iTextEnd;
         for (iRange=0; iRange<selection.rangeCount; iRange++) {
             range = selection.getRangeAt(iRange);
-            // convert to cableBody world
+            // convert to target container world
             iTextStart = this.normalizeOffset(range.startContainer, range.startOffset);
             iTextEnd   = this.normalizeOffset(range.endContainer, range.endOffset);
             if (iTextStart >= 0 && iTextStart < iTextEnd) {
@@ -379,8 +399,11 @@ var EFatMarker = function() {
     // * Synchronize highlights.
     // * Synchronize EFatMarker menu entries.
     // * Synchronize window hash.
-    // We may not want all of these to be synchronize, example(s):
-    // * When page load for first time, we want to leave hash untouched.
+    // We may not want all of the above to be synchronized at once,
+    // example(s):
+    // * When page load for first time, we want to leave hash untouched, as
+    //   there maybe an hash which is meaningless to EFatMarker, but meaningful
+    //   for the browser.
     // TODO: identify other cases, if any.
     this.syncDOMAll = function() {
         this.syncDOMHighlights();
@@ -398,11 +421,11 @@ var EFatMarker = function() {
         window.location.hash = token;
         };
 
+    // Meant to be called once when the page is loaded, after
+    // EFatMarker.render() has been called.
     this.syncDOMGotoFirstAnchor = function() {
-        // Meant to be called once when the page is loaded, after
-        // EFatMarker.render() has been called.
-        // First highlight will have be given the current token value as
-        // an anchor, so that when oage is first shown, first highlight is
+        // First highlight will be given the current token value as
+        // an anchor, so that when page is first shown, first highlight is
         // within view.
         if (this.hasSpans()) {
             var highlight = document.querySelector(".efm-parent");
@@ -472,7 +495,7 @@ var EFatMarker = function() {
                 efmNode.parentNode.replaceChild(entry.n, efmNode);
                 }
             }
-        // 2nd pass, remove hilight parents
+        // 2nd pass, remove highlight parents
         i = textmap.length-1;
         while (i-- > 0) {
             entry = textmap[i];
@@ -489,7 +512,7 @@ var EFatMarker = function() {
                 efmParent.parentNode.removeChild(efmParent);
                 }
             }
-        // 3rd pass, merge adjacent text nodes
+        // TODO: 3rd pass, merge adjacent text nodes
         // [optional, might be nice to reduce fragmentation of DOM tree]
         // looks like this may be required to prevent browser from 
         // reinterpreting incorrectly white space characters...
@@ -560,7 +583,7 @@ var EFatMarker = function() {
                 entryStart += efmTextNode.length;
                 iEntry++;
                 }
-            // hilighted slice
+            // highlighted slice
             efmNode = document.createElement('span');
             efmTextNode = document.createTextNode(entryText.substring(iNodeTextStart, iNodeTextEnd));
             efmNode.appendChild(efmTextNode);
