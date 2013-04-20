@@ -655,7 +655,12 @@ var EFatMarker = function() {
 
         var markerButtonContainer = document.querySelector('.efm-button-container');
         if (!markerButtonContainer) {
-            markerButtonContainer = document.body;
+            markerButtonContainer = document.createElement('div');
+            markerButtonContainer.className = 'efm-button-container';
+            markerButtonContainer.style.position = 'fixed';
+            markerButtonContainer.style.right = '0';
+            markerButtonContainer.style.bottom = '0';
+            document.body.appendChild(markerButtonContainer);
             }
         var markerButton = document.createElement("div");
         markerButton.id = "efm-button";
