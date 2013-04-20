@@ -446,11 +446,11 @@ var EFatMarker = function() {
             href = window.location.href,
             token = this.spansToToken();
         if (el) {
-            el.href = href;
             el.innerHTML = token
-                ? 'Permalink with highlights:<br><i>[...]<\/i>' + token.replace(/^#efm(.{3,10}).+?(.{3,10})$/,'$1...$2')
+                ? 'Permalink with highlights:<br>' + href.replace(/^(.{3,15}).+?(.{3,15})$/,'$1<i>...</i>$2')
                 : 'Permalink: [no highlights]'
                 ;
+            el.href = href;
             }
         // prepare a tweeter button for these highlights
         el = document.getElementById('efm-twitter-button');
@@ -662,10 +662,11 @@ var EFatMarker = function() {
         markerButton.innerHTML =
               '<div id="efm-menu">'
             + '<h3 style="margin:0 0 2px 0">EFatMarker<\/h3>'
-            + '<a id="efm-permalink" class="efm-need-highlight" href="#" style="margin-bottom:0;padding-bottom:0;"><\/a>'
-            + '<p style="margin-top:0;padding-top:0" class="efm-need-highlight">Right-click to copy permalink.<\/p>'
+            + '<p class="efm-menu-separator efm-need-highlight"><\/p>'
+            + '<a id="efm-permalink" class="efm-need-highlight" href="#" style="margin-bottom:0;padding-bottom:0;" target="_blank"><\/a>'
+            + '<p class="efm-menu-separator efm-need-highlight"><\/p>'
             + '<a id="efm-twitter-button" class="efm-need-highlight" href="#" target="_blank">these highlights<\/a>'
-            + '<p style="margin:0.5em 0;padding:0;border-top:1px dotted #ccc;height:1px"><\/p>'
+            + '<p class="efm-menu-separator"><\/p>'
             + '<a id="efm-unhighlightall" class="efm-need-highlight">Un-highlight all<\/a>'
             + '<a id="efm-unhighlight">Un-highlight selection<span>u<\/span><\/a>'
             + '<a id="efm-highlight">Highlight selection<span>h</span><\/a>'
