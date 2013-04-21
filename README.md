@@ -82,14 +82,20 @@ loads the first time.
 Demo
 ====
 
-I used a snapshot of a Wikipedia article, embedded EFatMarker's ```js``` and
-```css``` files to it, added the ```efm-target``` to the main article, and
-here are examples of permalinked highlights:
+I used a copy of a page on gnu.org and embedded EFatMarker's ```js``` and
+```css``` files in it, added the ```efm-target``` class to the HTML element
+which contains the main content, and so here are examples of permalinked
+highlights:
 
 * http://www.raymondhill.net/efatmarker/foreign-signs.html#efmAW0AX2
 * http://www.raymondhill.net/efatmarker/foreign-signs.html#efmA8IA9h
+
+This one is a version which include jQuery and uses the ```efm-button-container```
+class in order to control the position of the EFatMarker button:
+
 * http://www.raymondhill.net/efatmarker/foreign-signs-with-jquery.html#efmA2FA2LA6eA6jA71A77A_oA_uBDABDF
 
 The content of the page itself doesn't change, the fragment identifier
 (http://www.w3.org/TR/html4/intro/intro.html#fragment-uri) in the URL address
-specifies what portion of text must be highlighted.
+specifies what portion of text must be dynamically highlighted after the page
+loads.
