@@ -457,12 +457,7 @@ var EFatMarker = function() {
         if (el) {
             var queryComponents = [];
             queryComponents.push('url=' + String(encodeURIComponent(href)));
-            var tweet_text = [
-                document.querySelector('head title').innerHTML.replace(/_.*$/, ''),
-                '#wlfind'
-                ];
-            queryComponents.push('text=' + encodeURIComponent(tweet_text.join(' ')));
-            queryComponents.push('related=wikileaks');
+            queryComponents.push('text=' + encodeURIComponent(document.querySelector('head title').innerHTML));
             var canonicalUrl = document.querySelector('head link[rel="canonical"]');
             if (canonicalUrl) {
                 queryComponents.push('counturl=' + String(encodeURIComponent(canonicalUrl.href)));
