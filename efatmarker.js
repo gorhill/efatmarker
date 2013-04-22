@@ -91,8 +91,16 @@ loads the first time.
 
 /******************************************************************************/
 
+// http://jsperf.com/cache-window-document-or-not
+// This also help the minifier to further minify
+
+var win = window,
+    doc = win.document;
+
+/******************************************************************************/
+
 var EFatMarker = function() {
-    var node = document.querySelector(".efm-target");
+    var node = doc.querySelector(".efm-target");
     if (!node) {
         throw "EFatMarker: no element with class 'efm-target' found.";
         }
@@ -157,7 +165,7 @@ var EFatMarker = function() {
 
     // methods
     this.tokenToSpans = function() {
-        var token = window.location.hash || '',
+        var token = win.location.hash || '',
             matches;
         // token must be perfectly formatted, or else reject it
         matches = token.match(/^#efm(([\-\w]{6}){1,})/);
@@ -298,10 +306,10 @@ var EFatMarker = function() {
     this.unhighlightAll = function(render) {
         this.spans = [];
         if (render) {
-            if (window.getSelection) {
-                var selection = window.getSelection();
+            if (win.getSelection) {
+                var selection = win.getSelection();
                 if (selection) {
-                    window.getSelection().removeAllRanges();
+                    win.getSelection().removeAllRanges();
                     }
                 }
             this.syncDOMAll();
@@ -326,8 +334,8 @@ var EFatMarker = function() {
         };
 
     this.highlightSelection = function(render) {
-        if (!window.getSelection) {return;}
-        var selection = window.getSelection();
+        if (!win.getSelection) {return;}
+        var selection = win.getSelection();
         if (!selection) {return;}
         var iRange, range,
             iTextStart, iTextEnd;
@@ -347,8 +355,8 @@ var EFatMarker = function() {
         };
 
     this.unhighlightSelection = function(render) {
-        if (!window.getSelection) {return;}
-        var selection = window.getSelection();
+        if (!win.getSelection) {return;}
+        var selection = win.getSelection();
         if (!selection) {return;}
         var iRange, range,
             iTextStart, iTextEnd;
@@ -368,8 +376,8 @@ var EFatMarker = function() {
         };
 
     this.interpretSelection = function(render) {
-        if (!window.getSelection) {return;}
-        var selection = window.getSelection();
+        if (!win.getSelection) {return;}
+        var selection = win.getSelection();
         if (!selection) {return;}
         var iRange, range,
             iTextStart, iTextEnd;
@@ -418,7 +426,7 @@ var EFatMarker = function() {
 
     this.syncDOMHash = function() {
         var token = this.spansToToken();
-        window.location.hash = token;
+        win.location.hash = token;
         };
 
     // Meant to be called once when the page is loaded, after
@@ -428,22 +436,22 @@ var EFatMarker = function() {
         // an anchor, so that when page is first shown, first highlight is
         // within view.
         if (this.hasSpans()) {
-            var highlight = document.querySelector(".efm-parent");
+            var highlight = doc.querySelector(".efm-parent");
             if (highlight) {
                 var token = this.spansToToken();
                 highlight.id = token.substr(1);
                 // Yeah, that's to force the browser to react to our new
                 // anchor...
-                window.location.hash = "#efm";
-                window.location.hash = token;
+                win.location.hash = "#efm";
+                win.location.hash = token;
                 }
             }
         };
 
     this.syncDOMMenu = function() {
         // update permalink
-        var el = document.getElementById('efm-permalink'),
-            href = window.location.href,
+        var el = doc.getElementById('efm-permalink'),
+            href = win.location.href,
             token = this.spansToToken();
         if (el) {
             el.innerHTML = token
@@ -453,19 +461,19 @@ var EFatMarker = function() {
             el.href = href;
             }
         // prepare a tweeter button for these highlights
-        el = document.getElementById('efm-twitter-button');
+        el = doc.getElementById('efm-twitter-button');
         if (el) {
             var queryComponents = [];
             queryComponents.push('url=' + String(encodeURIComponent(href)));
-            queryComponents.push('text=' + encodeURIComponent(document.querySelector('head title').innerHTML));
-            var canonicalUrl = document.querySelector('head link[rel="canonical"]');
+            queryComponents.push('text=' + encodeURIComponent(doc.querySelector('head title').innerHTML));
+            var canonicalUrl = doc.querySelector('head link[rel="canonical"]');
             if (canonicalUrl) {
                 queryComponents.push('counturl=' + String(encodeURIComponent(canonicalUrl.href)));
                 }
             el.href = 'https:\/\/twitter.com\/share?' + queryComponents.join('&');
             }
         // enable/disable options which need at least one highlight
-        var elems = document.querySelectorAll('.efm-need-highlight'),
+        var elems = doc.querySelectorAll('.efm-need-highlight'),
             n = elems.length,
             hasHighlight = this.hasSpans();
         while (n--){
@@ -568,19 +576,19 @@ var EFatMarker = function() {
             // remove entry, we will create new entry reflecting new structure
             textmap.splice(iEntry, 1);
             // create parent node which will receive the (up to three) child nodes
-            efmParentNode = document.createElement('span');
+            efmParentNode = doc.createElement('span');
             efmParentNode.className = 'efm-parent';
             // slice of text before hilighted slice
             if (iNodeTextStart > 0){
-                efmTextNode = document.createTextNode(entryText.substring(0,iNodeTextStart));
+                efmTextNode = doc.createTextNode(entryText.substring(0,iNodeTextStart));
                 efmParentNode.appendChild(efmTextNode);
                 textmap.splice(iEntry, 0, {i:entryStart, n:efmTextNode});
                 entryStart += efmTextNode.length;
                 iEntry++;
                 }
             // highlighted slice
-            efmNode = document.createElement('span');
-            efmTextNode = document.createTextNode(entryText.substring(iNodeTextStart, iNodeTextEnd));
+            efmNode = doc.createElement('span');
+            efmTextNode = doc.createTextNode(entryText.substring(iNodeTextStart, iNodeTextEnd));
             efmNode.appendChild(efmTextNode);
             efmNode.className = 'efm-hi';
             efmParentNode.appendChild(efmNode);
@@ -589,7 +597,7 @@ var EFatMarker = function() {
             iEntry++;
             // slice of text after hilighted slice
             if (iNodeTextEnd < entryText.length){
-                efmTextNode = document.createTextNode(entryText.substr(iNodeTextEnd));
+                efmTextNode = doc.createTextNode(entryText.substr(iNodeTextEnd));
                 efmParentNode.appendChild(efmTextNode);
                 textmap.splice(iEntry, 0, {i:entryStart, n:efmTextNode});
                 entryStart += efmTextNode.length;
@@ -640,7 +648,7 @@ var EFatMarker = function() {
         };
     };
 
-    window.addEventListener('load', function(){
+    win.addEventListener('load', function(){
         var eMarker = new EFatMarker();
         if (!eMarker) { return; }
         eMarker.tokenToSpans(); // apply whatever token is there
@@ -648,16 +656,16 @@ var EFatMarker = function() {
         // Add EFatMarker button, to specified target container, or if none
         // found, to body element.
 
-        var markerButtonContainer = document.querySelector('.efm-button-container');
+        var markerButtonContainer = doc.querySelector('.efm-button-container');
         if (!markerButtonContainer) {
-            markerButtonContainer = document.createElement('div');
+            markerButtonContainer = doc.createElement('div');
             markerButtonContainer.className = 'efm-button-container';
             markerButtonContainer.style.position = 'fixed';
             markerButtonContainer.style.right = '0';
             markerButtonContainer.style.bottom = '0';
-            document.body.appendChild(markerButtonContainer);
+            doc.body.appendChild(markerButtonContainer);
             }
-        var markerButton = document.createElement("div");
+        var markerButton = doc.createElement("div");
         markerButton.id = "efm-button";
         markerButton.innerHTML =
               '<div id="efm-menu">'
@@ -677,21 +685,21 @@ var EFatMarker = function() {
             eMarker.interpretSelection(true);
             event.preventDefault();
             });
-        var elem = document.querySelector('#efm-unhighlightall');
+        var elem = doc.querySelector('#efm-unhighlightall');
         if (elem){
             elem.addEventListener('mousedown', function(event){
                 eMarker.unhighlightAll(true);
                 event.preventDefault();
                 });
             }
-        elem = document.querySelector('#efm-unhighlight');
+        elem = doc.querySelector('#efm-unhighlight');
         if (elem){
             elem.addEventListener('mousedown', function(event){
                 eMarker.unhighlightSelection(true);
                 event.preventDefault();
                 });
             }
-        elem = document.querySelector('#efm-highlight');
+        elem = doc.querySelector('#efm-highlight');
         if (elem){
             elem.addEventListener('mousedown', function(event){
                 eMarker.highlightSelection(true);
@@ -728,9 +736,9 @@ var EFatMarker = function() {
                 jQuery('body,html').animate({scrollTop: parseInt(jQuery('.efm-parent').offset().top, 10)});
                 }
            else if (typeof Fx === 'function') {
-                var highlight = document.querySelector('.efm-parent');
+                var highlight = doc.querySelector('.efm-parent');
                 if (highlight) {
-                    var scroll = new Fx.Scroll(window, {offset:{'x':0,'y':-50}});
+                    var scroll = new Fx.Scroll(win, {offset:{'x':0,'y':-50}});
                     scroll.toElement(highlight);
                     }
                 }
