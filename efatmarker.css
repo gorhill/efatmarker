@@ -116,6 +116,16 @@ SOFTWARE.
     right: 4px;
     }
 
+/* permalink input field */
+#efm-button #efm-menu #efm-permalink input {
+    margin-left: 1%;
+    border: 1px solid #ddd;
+    padding: 2px 1px;
+    width: 96%;
+    color: #444;
+    background-color: #f8f8f8;
+    }
+
 /* twitter button */
 #efm-button #efm-menu #efm-twitter-button {
     padding-left: 64px;

@@ -450,15 +450,11 @@ var EFatMarker = function() {
 
     this.syncDOMMenu = function() {
         // update permalink
-        var el = doc.getElementById('efm-permalink'),
+        var el = doc.querySelector('#efm-permalink input'),
             href = win.location.href,
             token = this.spansToToken();
         if (el) {
-            el.innerHTML = token
-                ? 'Permalink with highlights:<br>' + href.replace(/^(.{3,15}).+?(.{3,15})$/,'$1<i>...</i>$2')
-                : 'Permalink: [no highlights]'
-                ;
-            el.href = href;
+            el.value = token ? href : '';
             }
         // prepare a tweeter button for these highlights
         el = doc.getElementById('efm-twitter-button');
@@ -671,7 +667,8 @@ var EFatMarker = function() {
               '<div id="efm-menu">'
             + '<h3 style="margin:0 0 2px 0">EFatMarker<\/h3>'
             + '<p class="efm-menu-separator efm-need-highlight"><\/p>'
-            + '<a id="efm-permalink" class="efm-need-highlight" href="#" target="_blank"><\/a>'
+            + '<p id="efm-permalink" class="efm-need-highlight">Permalink with highlights:<br>'
+            + '<input type="text" readonly="readonly" value=""><\/p>'
             + '<p class="efm-menu-separator efm-need-highlight"><\/p>'
             + '<a id="efm-twitter-button" class="efm-need-highlight" href="#" target="_blank">these highlights<\/a>'
             + '<p class="efm-menu-separator"><\/p>'
@@ -704,6 +701,12 @@ var EFatMarker = function() {
             elem.addEventListener('mousedown', function(event){
                 eMarker.highlightSelection(true);
                 event.preventDefault();
+                });
+            }
+        elem = doc.querySelector('#efm-permalink > input');
+        if (elem){
+            elem.addEventListener('click', function(event){
+                this.select();
                 });
             }
         // TODO: Put back keybord support without having to depend on a
