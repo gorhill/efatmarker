@@ -5,7 +5,7 @@ This javascript library allows you to add a text highlighter to your web pages,
 which gives the users of your site the ability to share with others their own
 highlighted text passages on your web pages.
 
-<a href="http://www.raymondhill.net/efatmarker/foreign-signs-with-jquery.html" target="_blank">
+<a href="http://www.raymondhill.net/efatmarker/foreign-signs-with-jquery.html#efmAeIAfj" target="_blank">
 <img src="http://www.raymondhill.net/efatmarker/efatmarker-demo.gif">
 </a>
 
