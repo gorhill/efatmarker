@@ -9,8 +9,6 @@ highlighted text passages on your web pages.
 <img src="http://www.raymondhill.net/efatmarker/efatmarker-demo.gif">
 </a>
 
-Hightlights are most useful if you can share them with others.
-
 ## Demo
 
 I used a copy of a page on gnu.org and embedded EFatMarker's ```js``` and
