@@ -3,13 +3,11 @@ EFatMarker
 
 This javascript library allows you to add a text highlighter to your web pages,
 which gives the users of your site the ability to share with others their own
-highlighted text passages on your web pages.
+highlighted text passages on your web pages. Another way to see EFatMarker: a <a href="http://en.wikipedia.org/wiki/Wikipedia:Too_long;_didn't_read">"TL;DR</a> mitigator".
 
 <a href="http://www.raymondhill.net/efatmarker/foreign-signs-with-jquery.html#efmAeIAfj" target="_blank">
 <img src="http://www.raymondhill.net/efatmarker/efatmarker-demo.gif">
 </a>
-
-Another way to see EFatMarker: a <a href="http://en.wikipedia.org/wiki/Wikipedia:Too_long;_didn't_read">"TL;DR</a> mitigator".
 
 ## Demo
 
