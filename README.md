@@ -35,8 +35,7 @@ In the ```<head>``` section of your HTML file, include:
     ```<link rel="stylesheet" type="text/css" href="efatmarker.css" />```
 
 To change the style of the highlighted text, style the class ```.efm-hi```
-in your own file, provided your CSS file is loaded *after*
-```efatmarker.css```.
+in your own file, provided your CSS file is loaded *after* ```efatmarker.css```.
 
 Also, anywhere in your file, usuably preferably before the closing ```</body>```
 tag, include:
