@@ -34,8 +34,9 @@ loads.
 In the ```<head>``` section of your HTML file, include:
     ```<link rel="stylesheet" type="text/css" href="efatmarker.css" />```
 
-To change the style of the highlighted text, edit the class ```.efm-hi```
-in the CSS file.
+To change the style of the highlighted text, style the class ```.efm-hi```
+in your own file, provided your CSS file is loaded *after*
+```efatmarker.css```.
 
 Also, anywhere in your file, usuably preferably before the closing ```</body>```
 tag, include:
@@ -46,13 +47,16 @@ contains the text which will inherit the ability to be dynamically
 highlighted. Identify this container element by adding the class
 ```efm-target``` to its class attribute.
 
+If there is more than one HTML element with class ```efm-target```, EFatMarker
+will consider only the first one encountered.
+
 Optional: If there is an HTML element with the class ```efm-button-container```
 in the page, this element will be used to receive the EFatMarker button,
 otherwise, the ```<body>``` tag is used by default, with the button at the
 bottom right corner.
 
 There are no outside dependencies, however, if jQuery or MooTools' Fx is
-present, it will be used to scroll to the first highlight when the page
+present, these will be used to auto scroll to the first highlight when the page
 loads the first time.
 
 ## Compatibility
@@ -68,7 +72,6 @@ So far, tested on
 
 * Author: Raymond Hill
 * Home: https://github.com/gorhill/efatmarker
-* Version: 1.0
 
 ## Credits
 
