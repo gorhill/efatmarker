@@ -9,6 +9,8 @@ highlighted text passages on your web pages.
 <img src="http://www.raymondhill.net/efatmarker/efatmarker-demo.gif">
 </a>
 
+Another way to see EFatMarker: a <a href="http://en.wikipedia.org/wiki/Wikipedia:Too_long;_didn't_read">"TL;DR mitigator"</a>.
+
 ## Demo
 
 I used a copy of a page on gnu.org and embedded EFatMarker's ```js``` and
