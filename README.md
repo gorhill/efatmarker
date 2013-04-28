@@ -22,7 +22,7 @@ highlights:
 This one is a version which include jQuery and uses the ```efm-button-container```
 class in order to control the position of the EFatMarker button:
 
-* http://www.raymondhill.net/efatmarker/foreign-signs-with-jquery.html#efmA2FA2LA6eA6jA71A77A_oA_uBDABDF
+* http://www.raymondhill.net/efatmarker/foreign-signs-with-jquery.html#efmA3IA3RA4SA4YA5zA56A7QA7VA90A96BAkBAs
 
 The content of the page itself doesn't change, the fragment identifier
 (http://www.w3.org/TR/html4/intro/intro.html#fragment-uri) in the URL address
