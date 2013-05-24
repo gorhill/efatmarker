@@ -67,6 +67,11 @@ So far, tested on
 * Chromium 25.0.1364.160
 * Firefox 20.0
 
+## Limitations
+
+If the content of the target text changes, highlights made before change
+will no longer be accurately displayed.
+
 ## Project
 
 * Author: Raymond Hill
